@@ -30,7 +30,7 @@ RUN yum -y update && \
     echo " " > /sbin/start_udev && \
     sed -i 's/.*requiretty$/Defaults !requiretty/' /etc/sudoers && \
     groupadd vagrant && \
-    useradd vagrant -u 1000 -g vagrant -G wheel && \
+    useradd -u 1000 -g vagrant -G wheel vagrant && \
     echo "vagrant:vagrant" | chpasswd && \
     echo "vagrant        ALL=(ALL)       NOPASSWD: ALL" > /etc/sudoers.d/vagrant && \
     chmod 0440 /etc/sudoers.d/vagrant && \
