@@ -25,6 +25,8 @@ RUN yum -y update && \
     sed -i -e '/pam_loginuid\.so/ d' /etc/pam.d/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
     sed -ri 's/#UsePAM no/UsePAM no/g' /etc/ssh/sshd_config && \
+    ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && \
+    ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
     echo " " > /sbin/start_udev && \
     sed -i 's/.*requiretty$/Defaults !requiretty/' /etc/sudoers && \
     groupadd vagrant && \
