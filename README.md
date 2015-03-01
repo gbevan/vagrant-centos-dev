@@ -18,6 +18,6 @@ Build images using:
 
     docker build -t gbevan/vagrant-centos-dev:latest .
     
-    docker build -t gbevan/vagrant-centos-dev:trusty centos6/
+    docker build -t gbevan/vagrant-centos-dev:centos6 centos6/
     
-    docker build -t gbevan/vagrant-centos-dev:precise centos7/
+    docker build -t gbevan/vagrant-centos-dev:centos7 centos7/
