@@ -19,8 +19,9 @@ ENV LC_ALL=C
 RUN yum -y update && \
     yum -y upgrade && \
     yum -y groupinstall "Development Tools" && \
-    yum -y install libpcap postgresql postgresql-server postgresql-libs libdbi libdbi-dbd-pgsql perl-DBI perl-DBD-Pg httpd php php-pgsql php-gd sysstat && \
-    yum -y install initscripts rsyslog sudo zip tar redhat-lsb-core openssh-clients wget curl openssh-server unzip vim-enhanced && \
+    yum -y install libpcap postgresql postgresql-server postgresql-libs libdbi libdbi-dbd-pgsql perl-DBI perl-DBD-Pg httpd php php-pgsql php-gd sysstat \
+        initscripts rsyslog sudo zip tar redhat-lsb-core openssh-clients wget curl openssh-server unzip vim-enhanced libtool-ltdl-devel glib2-devel \
+        libpcap-devel pcre-devel libdbi-devel libdbi-dbd-pgsql && \
     echo "NETWORKING=yes" > /etc/sysconfig/network && \
     sed -i -e '/pam_loginuid\.so/ d' /etc/pam.d/sshd && \
     sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config && \
